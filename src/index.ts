@@ -4,7 +4,7 @@ import loadBlocks from './blocks';
 export type PluginOptions = {
   /**
    * Which blocks to add.
-   * @default ['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map']
+   * @default ['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map', 'section']
    */
   blocks?: string[];
 
@@ -49,6 +49,12 @@ export type PluginOptions = {
    * @default '3 Columns'
    */
   labelColumn3?: string;
+  
+  /**
+   * Section label
+   * @default 'Section'
+   */
+  labelSection?: string;
 
   /**
    * 3/7 Columns label
@@ -99,12 +105,13 @@ const plugin: Plugin<PluginOptions> = (editor, opts = {}) => {
       'column1',
       'column2',
       'column3',
+      'section',
       'column3-7',
       'text',
       'link',
       'image',
       'video',
-      'map'
+      'map',
     ],
     flexGrid: false,
     stylePrefix: 'gjs-',
@@ -113,6 +120,7 @@ const plugin: Plugin<PluginOptions> = (editor, opts = {}) => {
     labelColumn1: '1 Column',
     labelColumn2: '2 Columns',
     labelColumn3: '3 Columns',
+    labelSection: 'Section',
     labelColumn37: '2 Columns 3/7',
     labelText: 'Text',
     labelLink: 'Link',

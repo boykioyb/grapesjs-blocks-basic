@@ -1,7 +1,7 @@
 import type { Editor, BlockProperties } from 'grapesjs';
 import { PluginOptions } from '.';
 
-export default function(editor: Editor, opts: Required<PluginOptions>) {
+export default function (editor: Editor, opts: Required<PluginOptions>) {
   const bm = editor.BlockManager;
   const { category, blocks, stylePrefix, flexGrid, rowHeight, addBasicStyle } = opts;
   const clsRow = `${stylePrefix}row`;
@@ -53,6 +53,36 @@ export default function(editor: Editor, opts: Required<PluginOptions>) {
   .${stylePrefix}cell70 {
     width: 70%;
   }`;
+  const styleSection = `
+  [data-gjs-type="container"]:empty {
+    text-decoration: none;
+    padding: 5px;
+  }
+  .gjs-container {
+      width: 90%;
+      margin: 0 auto;
+      max-width: 1200px;
+  }
+  [data-gjs-type="container"]:empty:before {
+      background-color: #ddd;
+      color: #000;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: 0 10px;
+      opacity: 0.3;
+      border-radius: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      content: "Container";
+  }
+`;
 
   const step = 0.2;
   const minDim = 1;
@@ -141,14 +171,13 @@ export default function(editor: Editor, opts: Required<PluginOptions>) {
       content: `<div ${attrsRow}>
         <div ${attrsCell}></div>
       </div>
-      ${
-        addBasicStyle
+      ${addBasicStyle
           ? `<style>
           ${styleRow}
           ${styleClm}
         </style>`
           : ''
-      }`
+        }`
     });
 
   toAdd('column2') &&
@@ -162,14 +191,13 @@ export default function(editor: Editor, opts: Required<PluginOptions>) {
         <div ${attrsCell}></div>
         <div ${attrsCell}></div>
       </div>
-      ${
-        addBasicStyle
+      ${addBasicStyle
           ? `<style>
           ${styleRow}
           ${styleClm}
         </style>`
           : ''
-      }`
+        }`
     });
 
   toAdd('column3') &&
@@ -184,16 +212,29 @@ export default function(editor: Editor, opts: Required<PluginOptions>) {
         <div ${attrsCell}></div>
         <div ${attrsCell}></div>
       </div>
-      ${
-        addBasicStyle
+      ${addBasicStyle
           ? `<style>
           ${styleRow}
           ${styleClm}
         </style>`
           : ''
-      }`
+        }`
     });
-
+  toAdd('section') &&
+    bm.add('section', {
+      ...commonBlockProps,
+      label: opts.labelSection,
+      media: `<svg viewBox="0 0 24 24">
+      <path fill="currentColor" d="M21 18H2V20H21V18M19 10V14H4V10H19M20 8H3C2.45 8 2 8.45 2 9V15C2 15.55 2.45 16 3 16H20C20.55 16 21 15.55 21 15V9C21 8.45 20.55 8 20 8M21 4H2V6H21V4Z"></path>
+    </svg>`,
+      content: `<div data-gjs-type="container" class="gjs-container"></div>
+      ${addBasicStyle
+          ? `<style>
+          ${styleSection}
+        </style>`
+          : ''
+        }`
+    });
   toAdd('column3-7') &&
     bm.add('column3-7', {
       ...commonBlockProps,
@@ -202,15 +243,12 @@ export default function(editor: Editor, opts: Required<PluginOptions>) {
         <path fill="currentColor" d="M2 20h5V4H2v16Zm-1 0V4a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1ZM10 20h12V4H10v16Zm-1 0V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1Z"/>
       </svg>`,
       content: `<div ${attrsRow}>
-        <div ${attrsCell} style='${
-        flexGrid ? 'flex-basis' : 'width'
-      }: 30%;'></div>
-        <div ${attrsCell} style='${
-        flexGrid ? 'flex-basis' : 'width'
-      }: 70%;'></div>
+        <div ${attrsCell} style='${flexGrid ? 'flex-basis' : 'width'
+        }: 30%;'></div>
+        <div ${attrsCell} style='${flexGrid ? 'flex-basis' : 'width'
+        }: 70%;'></div>
       </div>
-      ${
-        addBasicStyle
+      ${addBasicStyle
           ? `<style>
           ${styleRow}
           ${styleClm}
@@ -218,7 +256,7 @@ export default function(editor: Editor, opts: Required<PluginOptions>) {
           ${styleClm70}
         </style>`
           : ''
-      }`
+        }`
     });
 
   toAdd('text') &&

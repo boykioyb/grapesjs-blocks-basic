@@ -8,13 +8,13 @@ This plugin contains some basic blocks for the GrapesJS editor
 ## Summary
 
 - Plugin name: `gjs-blocks-basic`
-- Blocks: `column1`, `column2`, `column3`, `column3-7`, `text`, `link`, `image`, `video`, `map`
+- Blocks: `column1`, `column2`, `column3`, `column3-7`, `text`, `link`, `image`, `video`, `map`, `section`
 
 ## Options
 
 | Option          | Description                      | Default                                                                                         |
 | --------------- | -------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `blocks`        | Which blocks to add              | `['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map']` (all) |
+| `blocks`        | Which blocks to add              | `['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map', 'section']` (all) |
 | `category`      | Category name                    | `Basic`                                                                                         |
 | `flexGrid`      | Make use of flexbox for the grid | `false`                                                                                         |
 | `stylePrefix`   | Classes prefix                   | `gjs-`                                                                                          |
@@ -28,6 +28,7 @@ This plugin contains some basic blocks for the GrapesJS editor
 | `labelImage`    | Image label                      | `Image`                                                                                         |
 | `labelVideo`    | Video label                      | `Video`                                                                                         |
 | `labelMap`      | Map label                        | `Map`                                                                                           |
+| `labelSection`  | Section label                    | `Section`                                                                                           |
 | `rowHeight`     | Initial height                   | `75`                                                                                          |
 
 ## Download
@@ -35,9 +36,9 @@ This plugin contains some basic blocks for the GrapesJS editor
 * CDN
   * `https://unpkg.com/grapesjs-blocks-basic`
 * NPM
-  * `npm i grapesjs-blocks-basic`
+  * `npm i boykioyb-grapesjs-blocks-basic`
 * GIT
-  * `git clone https://github.com/GrapesJS/blocks-basic.git`
+  * `git clone https://github.com/boykioyb/grapesjs-blocks-basic.git`
 
 ## Usage
 
@@ -87,7 +88,7 @@ const editor = grapesjs.init({
 Clone the repository
 
 ```sh
-$ git clone https://github.com/GrapesJS/blocks-basic.git
+$ git clone https://github.com/boykioyb/grapesjs-blocks-basic
 $ cd grapesjs-blocks-basic
 ```
 
