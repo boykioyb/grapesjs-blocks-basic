@@ -49,18 +49,25 @@ export type PluginOptions = {
    * @default '3 Columns'
    */
   labelColumn3?: string;
-  
-  /**
-   * Section label
-   * @default 'Section'
-   */
-  labelSection?: string;
+
 
   /**
    * 3/7 Columns label
    * @default '2 Columns 3/7'
    */
   labelColumn37?: string;
+
+  /**
+   * Heading label
+   * @default 'Heading'
+   */
+  labelHeading?: string;
+
+  /**
+   * Divider label
+   * @default 'Divider'
+   */
+  labelDivider?: string;
 
   /**
    * Text label
@@ -93,6 +100,12 @@ export type PluginOptions = {
   labelMap?: string;
 
   /**
+   * Section label
+   * @default 'Section'
+   */
+  labelSection?: string;
+
+  /**
    * Initial row height
    * @default 75
    */
@@ -105,23 +118,27 @@ const plugin: Plugin<PluginOptions> = (editor, opts = {}) => {
       'column1',
       'column2',
       'column3',
-      'section',
       'column3-7',
+      'heading',
       'text',
       'link',
       'image',
       'video',
       'map',
+      'section',
+      'divider'
     ],
     flexGrid: false,
     stylePrefix: 'gjs-',
     addBasicStyle: true,
     category: 'Basic',
+    labelSection: 'Section',
     labelColumn1: '1 Column',
     labelColumn2: '2 Columns',
     labelColumn3: '3 Columns',
-    labelSection: 'Section',
     labelColumn37: '2 Columns 3/7',
+    labelHeading: 'Heading',
+    labelDivider: 'Divider',
     labelText: 'Text',
     labelLink: 'Link',
     labelImage: 'Image',

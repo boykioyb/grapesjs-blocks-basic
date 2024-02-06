@@ -1,5 +1,5 @@
 {
-  "name": "grapesjs-blocks-basic",
+  "name": "bob-grapesjs-blocks-basic",
   "version": "1.0.3",
   "description": "Basic blocks for the GrapesJS editor",
   "main": "dist/index.js",
@@ -8,19 +8,20 @@
   ],
   "scripts": {
     "build": "grapesjs-cli build",
-    "start": "grapesjs-cli serve"
+    "dev": "grapesjs-cli serve"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GrapesJS/blocks-basic.git"
+    "url": "https://github.com/boykioyb/grapesjs-blocks-basic.git"
   },
   "keywords": [
     "grapesjs",
     "plugin",
     "blocks",
-    "basic"
+    "basic",
+    "boykioyb"
   ],
-  "author": "Artur Arseniev",
+  "author": "HoaTQ",
   "license": "BSD-3-Clause",
   "devDependencies": {
     "grapesjs": "^0.21.2",

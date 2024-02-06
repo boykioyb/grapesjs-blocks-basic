@@ -8,7 +8,7 @@ This plugin contains some basic blocks for the GrapesJS editor
 ## Summary
 
 - Plugin name: `gjs-blocks-basic`
-- Blocks: `column1`, `column2`, `column3`, `column3-7`, `text`, `link`, `image`, `video`, `map`, `section`
+- Blocks: `column1`, `column2`, `column3`, `column3-7`, `heading`, `text`, `link`, `image`, `video`, `map`, `section`, `divider`
 
 ## Options
 
@@ -16,27 +16,29 @@ This plugin contains some basic blocks for the GrapesJS editor
 | --------------- | -------------------------------- | ----------------------------------------------------------------------------------------------- |
 | `blocks`        | Which blocks to add              | `['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map', 'section']` (all) |
 | `category`      | Category name                    | `Basic`                                                                                         |
-| `flexGrid`      | Make use of flexbox for the grid | `false`                                                                                         |
-| `stylePrefix`   | Classes prefix                   | `gjs-`                                                                                          |
+| `flexGrid`       | Make use of flexbox for the grid  | `false`                                                                                         |
+| `stylePrefix`    | Classes prefix                    | `gjs-`                                                                                          |
 | `addBasicStyle` | Use basic CSS for blocks         | `true`                                                                                          |
 | `labelColumn1`  | 1 Column label                   | `1 Column`                                                                                      |
 | `labelColumn2`  | 2 Columns label                  | `2 Columns`                                                                                     |
 | `labelColumn3`  | 3 Columns label                  | `3 Columns`                                                                                     |
 | `labelColumn37` | 3/7 Columns label                | `2 Columns 3/7`                                                                                 |
+| `labelHeading`  | Heading label                    | `Heading`                                                                                       |
 | `labelText`     | Text label                       | `Text`                                                                                          |
 | `labelLink`     | Link label                       | `Link`                                                                                          |
 | `labelImage`    | Image label                      | `Image`                                                                                         |
 | `labelVideo`    | Video label                      | `Video`                                                                                         |
 | `labelMap`      | Map label                        | `Map`                                                                                           |
-| `labelSection`  | Section label                    | `Section`                                                                                           |
-| `rowHeight`     | Initial height                   | `75`                                                                                          |
+| `labelSection`  | Section label                    | `Section`                                                                                       |
+| `labelDivider`  | Divider label                    | `Divider`                                                                                       |
+| `rowHeight`     | Initial height                   | `75`                                                                                            |
 
 ## Download
 
 * CDN
   * `https://unpkg.com/grapesjs-blocks-basic`
 * NPM
-  * `npm i boykioyb-grapesjs-blocks-basic`
+  * `npm i bob-gjs-blocks-basic`
 * GIT
   * `git clone https://github.com/boykioyb/grapesjs-blocks-basic.git`
 

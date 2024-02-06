@@ -82,7 +82,21 @@ export default function (editor: Editor, opts: Required<PluginOptions>) {
       text-overflow: ellipsis;
       content: "Container";
   }
-`;
+  `;
+
+  const styleHeading = `.gjs-heading {
+  margin: 0;
+  color: rgba(29, 40, 55, 1);
+  }`;
+
+  const styleDivider = `.gjs-divider {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    height:2px;
+    background: #e5e7eb;
+  }`;
 
   const step = 0.2;
   const minDim = 1;
@@ -161,6 +175,21 @@ export default function (editor: Editor, opts: Required<PluginOptions>) {
     select: true,
   };
 
+  toAdd('section') &&
+    bm.add('section', {
+      ...commonBlockProps,
+      label: opts.labelSection,
+      media: `<svg viewBox="0 0 24 24">
+    <path fill="currentColor" d="M21 18H2V20H21V18M19 10V14H4V10H19M20 8H3C2.45 8 2 8.45 2 9V15C2 15.55 2.45 16 3 16H20C20.55 16 21 15.55 21 15V9C21 8.45 20.55 8 20 8M21 4H2V6H21V4Z"></path>
+  </svg>`,
+      content: `<div data-gjs-type="container" class="gjs-container"></div>
+    ${addBasicStyle
+          ? `<style>
+        ${styleSection}
+      </style>`
+          : ''
+        }`
+    });
   toAdd('column1') &&
     bm.add('column1', {
       ...commonBlockProps,
@@ -220,21 +249,7 @@ export default function (editor: Editor, opts: Required<PluginOptions>) {
           : ''
         }`
     });
-  toAdd('section') &&
-    bm.add('section', {
-      ...commonBlockProps,
-      label: opts.labelSection,
-      media: `<svg viewBox="0 0 24 24">
-      <path fill="currentColor" d="M21 18H2V20H21V18M19 10V14H4V10H19M20 8H3C2.45 8 2 8.45 2 9V15C2 15.55 2.45 16 3 16H20C20.55 16 21 15.55 21 15V9C21 8.45 20.55 8 20 8M21 4H2V6H21V4Z"></path>
-    </svg>`,
-      content: `<div data-gjs-type="container" class="gjs-container"></div>
-      ${addBasicStyle
-          ? `<style>
-          ${styleSection}
-        </style>`
-          : ''
-        }`
-    });
+
   toAdd('column3-7') &&
     bm.add('column3-7', {
       ...commonBlockProps,
@@ -257,6 +272,30 @@ export default function (editor: Editor, opts: Required<PluginOptions>) {
         </style>`
           : ''
         }`
+    });
+  toAdd('divider') &&
+    bm.add('divider', {
+      ...commonBlockProps,
+      activate: true,
+      label: opts.labelDivider,
+      media: `<svg viewBox="0 0 24 24">
+      <path d="M8,18H11V15H2V13H22V15H13V18H16L12,22L8,18M12,2L8,6H11V9H2V11H22V9H13V6H16L12,2Z"></path>
+    </svg>`,
+      content: `<div class="gjs-divider" title="divider"></div><style>${styleDivider}</style>`,
+    });
+  toAdd('heading') &&
+    bm.add('heading', {
+      ...commonBlockProps,
+      activate: true,
+      label: opts.labelHeading,
+      media: `<svg viewBox="0 0 24 24">
+      <path d="M8.3 11.5h7.4V6.9l-.2-1.6a1 1 0 00-.5-.5c-.3-.2-.7-.3-1-.3h-.6v-.4h6.8v.4h-.6c-.4 0-.7.1-1 .3a1 1 0 00-.6.6L18 6.9v10.3c0 .8 0 1.3.2 1.6 0 .2.2.3.4.5.4.2.7.3 1.1.3h.6v.4h-6.8v-.4h.5c.7 0 1.2-.2 1.5-.6.2-.3.3-.9.3-1.8v-4.9H8.3v4.9l.1 1.6.5.5c.3.2.7.3 1 .3h.7v.4H3.7v-.4h.6c.7 0 1.1-.2 1.4-.6.2-.3.3-.9.3-1.8V6.9L6 5.3a1 1 0 00-.5-.5l-1-.3h-.7v-.4h6.9v.4H10c-.4 0-.8.1-1 .3a1 1 0 00-.6.6l-.1 1.5v4.6z"></path>
+    </svg>`,
+      content: {
+        type: 'text',
+        content: `<h1 data-gjs-type="heading" draggable="true" class="gjs-heading" contenteditable="true">Insert your text here</h1><style>${styleHeading}</style>`,
+        style: { padding: '10px' },
+      }
     });
 
   toAdd('text') &&
