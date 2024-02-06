@@ -7,7 +7,7 @@ This plugin contains some basic blocks for the GrapesJS editor
 
 ## Summary
 
-- Plugin name: `gjs-blocks-basic`
+- Plugin name: `bob-gjs-blocks-basic`
 - Blocks: `column1`, `column2`, `column3`, `column3-7`, `heading`, `text`, `link`, `image`, `video`, `map`, `section`, `divider`
 
 ## Options
@@ -36,7 +36,7 @@ This plugin contains some basic blocks for the GrapesJS editor
 ## Download
 
 * CDN
-  * `https://unpkg.com/grapesjs-blocks-basic`
+  * `https://unpkg.com/bob-gjs-blocks-basic`
 * NPM
   * `npm i bob-gjs-blocks-basic`
 * GIT
@@ -48,7 +48,7 @@ Directly in the browser
 ```html
 <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet"/>
 <script src="https://unpkg.com/grapesjs"></script>
-<script src="path/to/grapesjs-blocks-basic.min.js"></script>
+<script src="path/to/bob-gjs-blocks-basic.min.js"></script>
 
 <div id="gjs"></div>
 
@@ -56,9 +56,9 @@ Directly in the browser
   var editor = grapesjs.init({
     fromElement: 1,
     container: "#gjs",
-    plugins: ["gjs-blocks-basic"],
+    plugins: ["bob-gjs-blocks-basic"],
     pluginsOpts: {
-      "gjs-blocks-basic": {
+      "bob-gjs-blocks-basic": {
         /* ...options */
       }
     }
@@ -69,7 +69,7 @@ Directly in the browser
 Modern javascript
 ```js
 import grapesjs from 'grapesjs';
-import plugin from 'grapesjs-blocks-basic';
+import plugin from 'bob-grapesjs-blocks-basic';
 
 const editor = grapesjs.init({
   container : '#gjs',
